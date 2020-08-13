@@ -187,13 +187,13 @@ and should return the average number of words per item in the array.
 
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
-// function getAverageWordLength(arr){
-//     for(let i=0; i<arr.length; i++){
-//         return 
-//     }
-// }
+function getAverageWordLength(arr){
+    for(let i=0; i<arr.length; i++){
+ 
+    }
+}
 
-// console.log(getAverageWordLength(originalFlavors))
+console.log(getAverageWordLength(originalFlavors))
 
 /* STRETCH 2: Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors.
 
@@ -277,12 +277,17 @@ var regionalFlavors = ["Pink Bubblegum",
     "Caramel 'n' Cookies"]
 
 function getRandomFlavors(arr1, arr2, arr3, arr4){
-    let randomFlavors = []
-    let bigArr = arr1.concat(arr2,arr3,arr4)
+    // creates a buffer array to hold random flavors
+    let buffer = [], start;
+    // combines arrays 1-4 into a single array
+    let masterList = arr1.concat(arr2,arr3,arr4)
+
+    // pushes 31 random flavors from masterList to buffer
     for (let i=0 ; i < 31; i++){
-        randomFlavors.push(bigArr[Math.floor(Math.random() * 100)])
+        buffer.push(masterList[Math.floor(Math.random() * 100)])
     }
-    return randomFlavors
+
+    return buffer
 }
 
 console.log(getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors))
